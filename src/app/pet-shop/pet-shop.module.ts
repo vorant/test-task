@@ -5,8 +5,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PetShopComponent } from './pet-shop/pet-shop.component';
-import {routeConfig} from "./router.config";
-import {RouterModule} from "@angular/router";
+import { routeConfig } from "./router.config";
+import { RouterModule } from "@angular/router";
 
 import {
   MdButtonModule,
@@ -22,12 +22,13 @@ import {
   MdToolbarModule,
 } from '@angular/material';
 import { PageHeadingComponent } from './shared/page-heading/page-heading.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { PetListFilterComponent } from './pet-list-filter/pet-list-filter.component';
 import { VegetarianFilterPipe } from './pet-list-filter/vegetarian-filter.pipe';
 import { ProductByPetPipe } from './product-list/product-by-pet.pipe';
 import { AddToCardDialogComponent } from './add-to-card-dialog/add-to-card-dialog.component';
-import {PetsApiService} from "./services/pets-api.service";
+import { PetsApiService } from "./services/pets-api.service";
+import {StorageService} from "./services/storage.service";
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import {PetsApiService} from "./services/pets-api.service";
     AddToCardDialogComponent
   ],
   providers: [
-    PetsApiService
+    PetsApiService,
+    StorageService
   ]
 })
 export class PetShopModule { }

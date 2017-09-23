@@ -30,7 +30,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   addToCart() {
-    let dialogParams = new MdDialogConfig();
+    const dialogParams = new MdDialogConfig();
     dialogParams.width = '250px';
     dialogParams.data = {
       name: this.product.name,
@@ -44,7 +44,9 @@ export class ProductCardComponent implements OnInit {
     const dialogRef = this.dialog.open(AddToCardDialogComponent, dialogParams);
 
     dialogRef.afterClosed().subscribe(count => {
-      if (!count) { return }
+      if (!count) {
+        return;
+      }
       this.shoppingCartService.addToCart({product: this.product, count: count});
     });
   }

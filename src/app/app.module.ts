@@ -7,10 +7,10 @@ import {AppComponent} from './app.component';
 import {MockBackend} from '@angular/http/testing';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockProductsAPI} from './mocks/mock-products-api.service';
-import {MockPetsAPI} from "./mocks/mock-pets-api.service";
-import {PetShopModule} from "./pet-shop/pet-shop.module";
-import {RouterModule} from "@angular/router";
-import {routeConfig} from "./router.config";
+import {MockPetsAPI} from './mocks/mock-pets-api.service';
+import {PetShopModule} from './pet-shop/pet-shop.module';
+import {RouterModule} from '@angular/router';
+import {routeConfig} from './router.config';
 
 export function HttpFactoryDev(backend: MockBackend, options: BaseRequestOptions) {
   return new Http(backend, options);

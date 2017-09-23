@@ -6,7 +6,7 @@
   </div>
 
   <md-nav-list class="product-list__list">
-    <a md-list-item class="product-list__list-item" *ngFor="let product of products | productByPet:chosenPets" [routerLink]="['/pet-shop/product/', product.name]">
+    <a md-list-item class="product-list__list-item" *ngFor="let product of products | productByPet:chosenPets" [routerLink]="['/product/', product.name]">
       <img mdListAvatar [src]="product.imageUrl" alt="{{product}}">
       <h4 md-line>{{product.name}}</h4>
       <p md-line>

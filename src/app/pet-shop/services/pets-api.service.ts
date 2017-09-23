@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {MockPetsAPI} from "../../mocks/mock-pets-api.service";
 import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import {Pet} from '../models/pet.model';
 import {Product} from '../models/product.model';
 import {MockProductsAPI} from "../../mocks/mock-products-api.service";

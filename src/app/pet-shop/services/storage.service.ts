@@ -5,8 +5,8 @@ import {Pet} from "../models/pet.model";
 import {PetsApiService} from "./pets-api.service";
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
-import 'rxjs/add/observable/of'
-import 'rxjs/add/operator/merge'
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/merge';
 import 'rxjs/add/observable/forkJoin';
 
 @Injectable()
@@ -26,7 +26,13 @@ export class StorageService {
         this.petsApiService.getPets()
       )
       .subscribe((results: [Product[], Pet[]]) => {
-        this.setData(...results);
+        /**
+         * I wanted to use this code,
+         * this.setData(...results);
+         * but sometimes it throws ERROR
+         * `ERROR in .../src/app/pet-shop/services/storage.service.ts (29,9): Supplied parameters do not match any signature of call target.
+         */
+        this.setData(results[0], results[1]);
       });
   }
 
@@ -42,7 +48,7 @@ export class StorageService {
     this.pets = pets;
 
     this.products = products.map(product => {
-      let extendedProduct = new ProductExtended();
+      const extendedProduct = new ProductExtended();
 
       Object.assign(extendedProduct, product);
 
@@ -55,7 +61,7 @@ export class StorageService {
   }
 
   private isPetVegetarian(petName): boolean {
-    const pet = this.pets.find(pet => pet.name === petName);
-    return pet.isVegetarian;
+    const foundedPet = this.pets.find(pet => pet.name === petName);
+    return foundedPet.isVegetarian;
   }
 }

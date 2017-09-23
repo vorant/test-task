@@ -8,12 +8,12 @@ import {Product} from "../../models/product.model";
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  count: number = 0;
+  count = 0;
   constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
-    this.shoppingCartService.getObservable().subscribe((res:ShoppingCartMessage) => {
+    this.shoppingCartService.getObservable().subscribe((res: ShoppingCartMessage) => {
       this.count++;
-    })
+    });
   }
 }

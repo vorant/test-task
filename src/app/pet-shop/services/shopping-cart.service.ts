@@ -27,7 +27,6 @@ export class ShoppingCartService {
   }
 
   private sendMessage(message: ShoppingCartMessage): void {
-    this.subject.next(message)
+    this.subject.next(message);
   }
 }
-

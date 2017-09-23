@@ -9,7 +9,7 @@ import {ShoppingCartService, ShoppingCartMessage} from "../services/shopping-car
 })
 export class ShoppingCartComponent implements OnInit {
   cart: ShoppingCartMessage[] = [];
-  total: number = 0;
+  total = 0;
 
   constructor(
     private shoppingCartService: ShoppingCartService
@@ -20,6 +20,6 @@ export class ShoppingCartComponent implements OnInit {
 
     this.cart.forEach(cartItem => {
       this.total += cartItem.product.price * cartItem.count;
-    })
+    });
   }
 }

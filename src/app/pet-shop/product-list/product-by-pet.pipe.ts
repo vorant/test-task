@@ -11,7 +11,7 @@ export class ProductByPetPipe implements PipeTransform {
     return !args || !args.length ? products : products.filter(product => this.isProductForPet(product, args)) ;
   }
 
-  private isProductForPet(product:ProductExtended, pets: Pet[]): boolean {
+  private isProductForPet(product: ProductExtended, pets: Pet[]): boolean {
     return  product.pets.some(petName => pets.some(pet => pet.name === petName));
   }
 
