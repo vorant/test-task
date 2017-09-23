@@ -1,0 +1,20 @@
+.pet-list-filter {
+  &__filter {
+    display: flex;
+    align-items: center;
+  }
+  &__filter-select {
+    padding: 10px 10px;
+  }
+  &__filter-toggle-wrapper {
+    padding: 26px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+  }
+  &__filter-toggle-label {
+    padding: 10px 10px;
+  }
+  &__filter-toggler {
+    margin-top: 10px;
+  }
+}

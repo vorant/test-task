@@ -1,0 +1,21 @@
+<div class="shopping-cart">
+  <app-page-heading [heading]="'Shopping cart'"> </app-page-heading>
+
+
+  <md-nav-list class="shopping-cart__list">
+    <md-list-item *ngFor="let cartItem of cart" class="shopping-cart__item">
+
+        <span class="shopping-cart__item-count">{{cartItem.count}}</span>
+        <span class="shopping-cart__count-spacer">X</span>
+        <span class="shopping-cart__item-name">{{cartItem.product.name}}</span>
+        <span class="shopping-cart__spacer"></span>
+        <span class="shopping-cart__item-price">${{cartItem.product.price}}</span>
+
+    </md-list-item>
+    <md-list-item class="shopping-cart__item">
+      <h4 md-line class="shopping-cart__total-line">
+        <span class="shopping-cart__item-total">Total: ${{total}}</span>
+      </h4>
+    </md-list-item>
+  </md-nav-list>
+</div>

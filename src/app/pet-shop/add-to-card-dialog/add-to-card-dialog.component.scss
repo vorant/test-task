@@ -1,0 +1,12 @@
+.add-to-card-dialog {
+  &__name {
+    font-weight: 700;
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input {
+    width: 100%;
+  }
+}

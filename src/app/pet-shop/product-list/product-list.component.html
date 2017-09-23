@@ -1,0 +1,20 @@
+<div class="product-list">
+  <app-page-heading [heading]="'Products'"> </app-page-heading>
+
+  <div class="product-list__filter">
+    <app-pet-list-filter (onPetsChosen)="onPetsChosen($event)"></app-pet-list-filter>
+  </div>
+
+  <md-nav-list class="product-list__list">
+    <a md-list-item class="product-list__list-item" *ngFor="let product of products | productByPet:chosenPets" [routerLink]="['/pet-shop/product/', product.name]">
+      <img mdListAvatar [src]="product.imageUrl" alt="{{product}}">
+      <h4 md-line>{{product.name}}</h4>
+      <p md-line>
+        <span *ngFor="let pet of product.pets; last as isLast">{{pet}}{{isLast ? '' : ', '}}</span>
+      </p>
+      <p class="product-list__list-item-price">
+        <span>${{product.price}}</span>
+      </p>
+    </a>
+  </md-nav-list>
+</div>

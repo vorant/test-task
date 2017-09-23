@@ -1,0 +1,17 @@
+.product-list {
+  &__list {
+  }
+  &__list-item-price {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  &__list-item {
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  }
+}

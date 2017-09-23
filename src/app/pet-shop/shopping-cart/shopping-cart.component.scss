@@ -1,0 +1,27 @@
+.shopping-cart {
+  &__item-total {
+    font-weight: 700;
+  }
+  &__item {
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  }
+  &__list {
+  }
+  &__total-line {
+    text-align: right;
+  }
+  &__spacer {
+    flex: 1 1 auto;
+  }
+  &__item-heading {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+  }
+  &__count-spacer {
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,20 @@
+.header {
+  &__spacer {
+    flex: 1 1 auto;
+  }
+  &__icon {
+    padding: 0 14px;
+  }
+  &__logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+  }
+  &__cart-button-content {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    justify-content: space-between;
+  }
+}

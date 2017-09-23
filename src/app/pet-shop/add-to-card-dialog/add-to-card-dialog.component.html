@@ -1,0 +1,16 @@
+<div class="add-to-card-dialog">
+  <div md-dialog-content>
+    <section class="mat-typography">
+      <p>Do you really want to add <span class="add-to-card-dialog__name">{{data.name}}</span> to cart?</p>
+    </section>
+
+    <md-form-field>
+      <input mdInput placeholder="Count" class="add-to-card-dialog__input" tabindex="1" [(ngModel)]="data.count">
+    </md-form-field>
+  </div>
+  <div md-dialog-actions class="add-to-card-dialog__actions">
+    <button md-raised-button [md-dialog-close]="data.count" tabindex="2">Ok</button>
+    <button md-raised-button color="primary" (click)="onNoClick()" tabindex="-1">No Thanks</button>
+  </div>
+</div>
+

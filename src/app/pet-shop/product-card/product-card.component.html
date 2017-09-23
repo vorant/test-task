@@ -1,0 +1,31 @@
+<div class="product-card" *ngIf="allDataFetched">
+  <app-page-heading [heading]="'Product card'"> </app-page-heading>
+
+  <div class="product-card__card">
+    <div class="product-card__image-wrapper">
+      <img md-card-image class="product-card__image" [src]="product.imageUrl" [alt]="product.name">
+    </div>
+    <div class="product-card__card-description">
+      <div class="product-card__card-name mat-headline">{{product.name}}</div>
+      <div class="mat-subheading-2">
+        For
+        <span *ngFor="let pet of product.pets; last as isLast">{{pet}}{{isLast ? '' : ', '}}</span>
+      </div>
+      <div class="mat-subheading-2">
+        Price: ${{product.price}}
+      </div>
+      <div class="mat-subheading-2">
+        Vegetarian:
+        <span *ngIf="product.isForVegetarians">Yes</span>
+        <span *ngIf="!product.isForVegetarians">No</span>
+      </div>
+
+      <div class="product-card__actions">
+        <button md-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

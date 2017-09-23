@@ -1,0 +1,27 @@
+<div class="pet-list-filter">
+  <div class="pet-list-filter__filter">
+    <div class="pet-list-filter__filter-select">
+      <md-select placeholder="Pet" [(ngModel)]="selectedPet" (ngModelChange)="selectPet()">
+        <md-option
+          *ngFor="let pet of pets | vegetarianFilter:isVegetarianOnly"
+          [value]="pet"
+          >
+          {{ pet.name }}
+        </md-option>
+      </md-select>
+    </div>
+    <div class="pet-list-filter__filter-toggle-wrapper">
+      <span class="pet-list-filter__filter-toggle-label">All</span>
+      <div class="pet-list-filter__filter-toggler">
+        <md-slide-toggle
+          [(ngModel)]="isVegetarianOnly"
+          (ngModelChange)="vegetarianToggled()"
+        >
+        </md-slide-toggle>
+      </div>
+
+      <span class="pet-list-filter__filter-toggle-label">Vegetarian only</span>
+    </div>
+  </div>
+</div>
+
