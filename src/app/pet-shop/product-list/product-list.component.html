@@ -7,7 +7,7 @@
 
   <md-nav-list class="product-list__list">
     <a md-list-item class="product-list__list-item" *ngFor="let product of products | productByPet:chosenPets" [routerLink]="['/product/', product.name]">
-      <img mdListAvatar [src]="product.imageUrl" alt="{{product}}">
+      <img mdListAvatar [src]="product.imageUrl" alt="{{product.name}}">
       <h4 md-line>{{product.name}}</h4>
       <p md-line>
         <span *ngFor="let pet of product.pets; last as isLast">{{pet}}{{isLast ? '' : ', '}}</span>

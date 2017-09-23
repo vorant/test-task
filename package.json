@@ -8,7 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy": "ng build --prod --base-href 'https://vorant.github.io/test-task/' && ngh --message='next commit'"
+    "deploy": "ng build --prod --base-href /test-task/ && ngh --message='Next commit'"
   },
   "private": true,
   "dependencies": {
