@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PetShopComponent } from './pet-shop.component';
+import {HeaderComponent} from "../shared/header/header.component";
+import {RouterTestingModule} from "@angular/router/testing";
+import {MdIconModule} from "@angular/material";
 
 describe('PetShopComponent', () => {
   let component: PetShopComponent;
@@ -8,7 +11,14 @@ describe('PetShopComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PetShopComponent ]
+      imports: [
+        RouterTestingModule,
+        MdIconModule
+      ],
+      declarations: [
+        PetShopComponent,
+        HeaderComponent
+      ]
     })
     .compileComponents();
   }));
