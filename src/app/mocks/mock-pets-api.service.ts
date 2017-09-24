@@ -40,6 +40,8 @@ const listOfPets = () => {
   ];
 };
 
+export const MockPets: Array<any> = listOfPets();
+
 @Injectable()
 export class MockPetsAPI {
 

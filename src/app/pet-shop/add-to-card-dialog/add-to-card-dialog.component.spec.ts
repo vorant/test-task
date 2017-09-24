@@ -9,10 +9,9 @@ import {
   MdDialogRef, MD_DIALOG_DATA
 } from '@angular/material';
 
-describe('AddToCardDialogComponent', () => {
+describe('AddToCardDialogComponent -> ', () => {
   let component: AddToCardDialogComponent;
   let fixture: ComponentFixture<AddToCardDialogComponent>;
-  let dialog: MdDialog;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,7 +25,7 @@ describe('AddToCardDialogComponent', () => {
       ],
       providers: [
         {provide: MD_DIALOG_DATA, useValue: {} },
-        {provide: MdDialogRef, useValue: {} },
+        {provide: MdDialogRef, useValue: { close: () => {}} },
       ]
     })
     .compileComponents();
@@ -40,5 +39,16 @@ describe('AddToCardDialogComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('Spy ->', () => {
+    beforeEach(() => {
+      spyOn(component.dialogRef, 'close');
+      component.onNoClick();
+    });
+
+    it('dialog should be closed', () => {
+      expect(component.dialogRef.close).toHaveBeenCalled();
+    });
   });
 });

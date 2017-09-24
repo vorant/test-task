@@ -13,7 +13,7 @@ export class ShoppingCartService {
   private subject = new Subject<ShoppingCartMessage>();
   private cart: ShoppingCartMessage[] = [];
 
-  getObservable(): Observable<ShoppingCartMessage> {
+  getObservable(): Subject<ShoppingCartMessage> {
     return this.subject;
   }
 

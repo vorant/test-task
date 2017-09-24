@@ -3,9 +3,9 @@ import { TestBed, inject } from '@angular/core/testing';
 import { StorageService } from './storage.service';
 import { PetsApiService } from './pets-api.service';
 import {Http, BaseRequestOptions, ConnectionBackend} from "@angular/http";
-import {MockProductsAPI} from "../../mocks/mock-products-api.service";
 import {MockBackend} from "@angular/http/testing";
-import {MockPetsAPI} from "../../mocks/mock-pets-api.service";
+import {MockProductsAPI, MockProducts} from "../../mocks/mock-products-api.service";
+import {MockPetsAPI, MockPets} from "../../mocks/mock-pets-api.service";
 
 export function HttpFactoryDev(backend: MockBackend, options: BaseRequestOptions) {
   return new Http(backend, options);
@@ -34,5 +34,17 @@ describe('StorageService', () => {
 
   it('should be created', inject([StorageService], (service: StorageService) => {
     expect(service).toBeTruthy();
+  }));
+
+  it('Get Pets', inject([StorageService], (service: StorageService) => {
+    service.getPetsObservable().subscribe(pets => {
+      expect(pets.length).toEqual(MockPets.length);
+    });
+  }));
+
+  it('Get Products', inject([StorageService], (service: StorageService) => {
+    service.getProductsObservable().subscribe(products => {
+      expect(products.length).toEqual(MockProducts.length);
+    });
   }));
 });

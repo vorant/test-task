@@ -2,7 +2,7 @@ import {MockBackend, MockConnection} from '@angular/http/testing';
 import {RequestMethod, ResponseOptions, Request, Response} from '@angular/http';
 import {Injectable} from '@angular/core';
 
-const listOfProducts = () => {
+export const listOfProducts = () => {
 
   return [
     {
@@ -49,6 +49,8 @@ const listOfProducts = () => {
     }
   ];
 };
+
+export const MockProducts: Array<any> = listOfProducts();
 
 @Injectable()
 export class MockProductsAPI {

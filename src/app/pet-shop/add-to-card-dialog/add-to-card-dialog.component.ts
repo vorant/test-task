@@ -7,9 +7,9 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./add-to-card-dialog.component.scss']
 })
 export class AddToCardDialogComponent implements OnInit {
-  public dialogRef: MdDialogRef<AddToCardDialogComponent>;
 
   constructor(
+    public dialogRef: MdDialogRef<AddToCardDialogComponent>,
     @Inject(MD_DIALOG_DATA) public data: any
   ) { }
 
