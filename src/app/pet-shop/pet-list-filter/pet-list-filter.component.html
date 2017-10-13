@@ -2,6 +2,7 @@
   <div class="pet-list-filter__filter">
     <div class="pet-list-filter__filter-select">
       <md-select placeholder="Pet" [(ngModel)]="selectedPet" (ngModelChange)="selectPet()">
+        <md-option [value]="null">All pets</md-option>
         <md-option
           *ngFor="let pet of pets | vegetarianFilter:isVegetarianOnly"
           [value]="pet"

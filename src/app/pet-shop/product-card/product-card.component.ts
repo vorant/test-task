@@ -47,7 +47,7 @@ export class ProductCardComponent implements OnInit {
       if (!count) {
         return;
       }
-      this.shoppingCartService.addToCart({product: this.product, count: count});
+      this.shoppingCartService.addToCart({product: this.product, count: parseInt(count, 10)});
     });
   }
 

@@ -30,7 +30,13 @@ export class PetListFilterComponent implements OnInit {
   }
 
   selectPet() {
-    this.onPetsChosen.emit([this.selectedPet]);
+    if (this.selectedPet) {
+      this.onPetsChosen.emit([this.selectedPet]);
+    } else {
+      this.onPetsChosen.emit([]);
+      this.isVegetarianOnly = false;
+      this.updatePets();
+    }
   }
 
   vegetarianToggled() {

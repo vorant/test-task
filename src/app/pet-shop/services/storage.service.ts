@@ -19,7 +19,18 @@ export class StorageService {
   constructor(
     private petsApiService: PetsApiService
   ) {
+    this.init();
+  }
 
+  getProductsObservable(): Observable<ProductExtended[]> {
+    return this.products.length ? Observable.of(this.products) : this.productsObservable;
+  }
+
+  getPetsObservable(): Observable<Pet[]> {
+    return this.pets.length ? Observable.of(this.pets) : this.petsObservable;
+  }
+
+  private init(): void {
     Observable
       .forkJoin(
         this.petsApiService.getProducts(),
@@ -34,14 +45,6 @@ export class StorageService {
          */
         this.setData(results[0], results[1]);
       });
-  }
-
-  getProductsObservable(): Observable<ProductExtended[]> {
-    return this.products.length ? Observable.of(this.products) : this.productsObservable;
-  }
-
-  getPetsObservable(): Observable<Pet[]> {
-    return this.pets.length ? Observable.of(this.pets) : this.petsObservable;
   }
 
   private setData(products, pets) {

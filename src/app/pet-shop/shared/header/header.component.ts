@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.shoppingCartService.getObservable().subscribe((res: ShoppingCartMessage) => {
-      this.count++;
+      this.count += res.count;
     });
   }
 }

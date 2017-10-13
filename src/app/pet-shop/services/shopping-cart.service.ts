@@ -18,7 +18,13 @@ export class ShoppingCartService {
   }
 
   addToCart(message: ShoppingCartMessage): void {
-    this.cart.push(message);
+    const productInCard = this.cart.find(cartMessage => cartMessage.product.name === message.product.name);
+    if (productInCard) {
+      productInCard.count += message.count;
+    } else {
+      this.cart.push(message);
+    }
+
     this.sendMessage(message);
   }
 

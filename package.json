@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy": "ng build --prod --base-href /test-task/ && ngh --message='Next commit'"
+    "deploy": "ng build --prod --base-href /test-task/ && ngh --message='Next commit'",
+    "deploy-ns": "ng build --prod --base-href /test-task/ && ngh --message='Next commit' --no-silent"
   },
   "private": true,
   "dependencies": {
